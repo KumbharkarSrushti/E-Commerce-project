@@ -3,7 +3,7 @@ import Nav from "./navbar.js";
 
 const Header = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-dark pt-3 pb-3 ps-4 pe-4 text-light">
+    <nav className="navbar navbar-expand-lg pt-3 pb-3 ps-4 pe-4 text-light">
       <div className="container-fluid">
         <button
           className="navbar-toggler"
@@ -19,8 +19,10 @@ const Header = () => {
         </button>
 
         <Nav />
+       
       </div>
     </nav>
+    
   );
 };
 
