@@ -18,8 +18,15 @@ const Header = () => {
   };
 
   return (
+<<<<<<< HEAD
     <>
+=======
+<<<<<<< HEAD
+    <nav className="navbar navbar-expand-lg pt-3 pb-3 ps-4 pe-4 text-light">
+=======
+>>>>>>> origin/master
     <nav className="navbar navbar-expand-lg pt-3 pb-3 ps-4 pe-4 text-dark">
+>>>>>>> d2aa09cab00553512b3fa1358d56aff4045215e6
       <div className="container-fluid">
         <button
           className="navbar-toggler"
@@ -35,6 +42,9 @@ const Header = () => {
         </button>
 
         <Nav />
+<<<<<<< HEAD
+       
+=======
 
         <div className="d-flex align-items-center">
           <form onSubmit={handleSearchSubmit} className="me-3">
@@ -60,9 +70,14 @@ const Header = () => {
             </Link>
           </div>
         </div>
+>>>>>>> d2aa09cab00553512b3fa1358d56aff4045215e6
       </div>
     </nav>
+<<<<<<< HEAD
     </>
+=======
+    
+>>>>>>> origin/master
   );
 };
 
