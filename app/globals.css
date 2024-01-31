@@ -1,5 +1,39 @@
-@import 'bootstrap/dist/css/bootstrap.min.css';
 body{
     background-color: #ffffff;
     color: #fff;
+}
+
+*{
+    margin: 1px;
+}
+
+.container-fluid{
+    padding-top: 26px;
+}
+
+.navbar-brand{
+    border-radius: 20px;
+    width:15px;
+    background-color:#FBE9A9;
+}
+.navbar{
+    width: 1280px;
+    margin: auto;
+}
+
+.carousel {
+    display: flex;
+    width: 1280px;
+    height: 488px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    margin:auto;
+}
+
+
+.Silder1{
+    width: 1278px;
+    height: 352px;
+    margin: auto;
 }

@@ -2,15 +2,23 @@
 import Link from "next/link";
 import { useState } from "react";
 import Nav from "./navbar.js";
+import Slider from "./slider.js"
+
 
 const Header = () => {
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
 
-  const toggleSearch = () => {
-    setIsSearchOpen(!isSearchOpen);
+  const handleSearchChange = (e) => {
+    setSearchValue(e.target.value);
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    console.log("Search submitted:", searchValue);
   };
 
   return (
+    <>
     <nav className="navbar navbar-expand-lg pt-3 pb-3 ps-4 pe-4 text-dark">
       <div className="container-fluid">
         <button
@@ -29,50 +37,32 @@ const Header = () => {
         <Nav />
 
         <div className="d-flex align-items-center">
-          <div className="me-3 position-relative">
-            <button
-              className="btn btn-link text-light"
-              onClick={toggleSearch}
-            >
-              <img src="/Search.png" alt="Search" width="20" height="20" />
-            </button>
-
-            <div
-              className={`modal fade${isSearchOpen ? " show" : ""}`}
-              style={{ display: isSearchOpen ? "block" : "none" }}
-              tabIndex="-1"
-            >
-              <div className="modal-dialog">
-                <div className="modal-content">
-                  <div className="modal-header">
-                    <h5 className="modal-title">Search</h5>
-                    <button
-                      type="button"
-                      className="btn-close"
-                      onClick={toggleSearch}
-                    ></button>
-                  </div>
-                  <div className="modal-body">
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="Search..."
-                    />
-                  </div>
-                </div>
-              </div>
+          <form onSubmit={handleSearchSubmit} className="me-3">
+            <div className="input-group">
+              <span className="input-group-text">
+                <img src="/Search.png" alt="Search" width="20" height="20" />
+              </span>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Search..."
+                value={searchValue}
+                onChange={handleSearchChange}
+              />
             </div>
-          </div>
-          <div>
-            <Link href="/cart" passHref legacyBehavior>
-              <a className="btn btn-link text-light">
+          </form>
+          <div className="d-flex align-items-center">
+            <Link href="/My Cart" passHref legacyBehavior>
+              <a className="btn btn-link text-light d-flex align-items-center">
                 <img src="/Cart.png" alt="Cart" width="40" height="40" />
+                <div className="nav-link text-primary ms-2">My Cart</div>
               </a>
             </Link>
           </div>
         </div>
       </div>
     </nav>
+    </>
   );
 };
 
